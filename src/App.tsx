@@ -2895,7 +2895,7 @@ function toHiragana(input: string): string {
 
 // --- メインコンポーネント ---
 export default function GameLog() {
-  const [rows, setRows] = useState<GameItem[]>(seedData);
+  const [rows] = useState<GameItem[]>(seedData);
   const [query, setQuery] = useState("");
   const [hardwareFilter, setHardwareFilter] = useState<string>("all");
   const [completedFilter, setCompletedFilter] = useState<string>("all");
@@ -3042,7 +3042,7 @@ export default function GameLog() {
                       <TableCell className="text-sm text-muted-foreground">{r.achievement || ""}</TableCell>
                       <TableCell className="text-sm text-muted-foreground">{r.notes || ""}</TableCell>
                       <TableCell className="text-sm text-center">
-                        {r.archive_url.length !== 0 && (
+                        {r.archive_url?.length !== 0 && (
                           <a target="_blank" href={"" + r.archive_url}><ExternalLink className="w-4 h-4"/></a>
                         )}
                       </TableCell>
