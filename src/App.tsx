@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Card, CardContent } from "./components/ui/card";
 import { Input } from "./components/ui/input";
 import { Badge } from "./components/ui/badge";
@@ -12,7 +12,8 @@ import { motion } from "framer-motion";
 // import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./components/ui/dialog";
 // import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./components/ui/sheet";
 // import { ScrollArea } from "./components/ui/scroll-area";
-import { Download, Upload, Plus, Pencil, Trash2, Filter as FilterIcon, Search, Library, Gamepad2, ArrowDownWideNarrow, ExternalLink } from "lucide-react";
+import { Search, Gamepad2, ArrowDownWideNarrow, ExternalLink } from "lucide-react";
+// import { Filter as FilterIcon, Search, Gamepad2, ArrowDownWideNarrow, ExternalLink } from "lucide-react";
 
 // --- 型定義 ---
 export type GameItem = {
