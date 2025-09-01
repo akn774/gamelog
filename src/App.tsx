@@ -5,13 +5,13 @@ import { Badge } from "./components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./components/ui/table";
 import { Tabs, TabsList, TabsTrigger } from "./components/ui/tabs";
-import { motion, number } from "framer-motion";
+import { motion } from "framer-motion";
 // import { Button } from "./components/ui/button";
 // import { Textarea } from "./components/ui/textarea";
 // import { Checkbox } from "./components/ui/checkbox";
 // import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./components/ui/dialog";
 // import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./components/ui/sheet";
-// import { ScrollArea } from "./components/ui/scroll-area";
+// import { ScrollArea } from "./componentnpm run builds/ui/scroll-area";
 import { Search, Gamepad2, ArrowDownWideNarrow, ExternalLink, Check, Minus} from "lucide-react";
 // import { Filter as FilterIcon, Search, Gamepad2, ArrowDownWideNarrow, ExternalLink } from "lucide-react";
 import gamesData from "./data/games.json";
@@ -27,7 +27,7 @@ export type GameItem = {
   playtime: number;       // プレイ時間
   archive_url?: string;   // （任意）配信アーカイブのURL
   notes?: string;         // （任意）一言メモ
-  release_date: string;   // リリース日
+  release_date: number;   // リリース日
 };
 
 // --- サンプルデータ（初期表示用） ---
@@ -199,8 +199,8 @@ export default function GameLog() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {filtered.map((r) => (
-                    <TableRow key={r.id} className="odd:bg-white even:bg-slate-50">
+                  {filtered.map((r, i) => (
+                    <TableRow key={i} className="odd:bg-white even:bg-slate-50">
                       <TableCell>
                         <Badge variant="secondary" className="text-xs py-1 px-2 rounded-xl">{r.hardware}</Badge>
                       </TableCell>
